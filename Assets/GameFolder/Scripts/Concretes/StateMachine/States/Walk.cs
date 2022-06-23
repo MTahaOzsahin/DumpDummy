@@ -9,11 +9,13 @@ namespace SurviveBoy.Concretes.StateMachine.States
     {
         IMover _mover;
         IAnimations _animations;
+        IEntityController _entityController;
         Transform[] _patrols;
         Transform _currentPatrol;
         int _patrolIndex = 0;
-        public Walk(IMover mover,IAnimations animations,params Transform[] patrols)
+        public Walk(IEntityController entityController,IMover mover,IAnimations animations,params Transform[] patrols)
         {
+            _entityController = entityController;
             _mover = mover;
             _animations = animations;
             _patrols = patrols;
@@ -29,9 +31,13 @@ namespace SurviveBoy.Concretes.StateMachine.States
         public void Action()
         {
             if (_currentPatrol == null) return;
-            _mover.Movement(new Vector3(0f,0f,0.15f));
-            Debug.Log("walk");
-
+            _mover.Movement(new Vector3(0f, 0f, 0.3f));
+            if (Vector2.Distance(_entityController.transform.position, _currentPatrol.position) <= 0.2f)
+            {
+                IsWalking = false;
+                _mover.Movement(Vector3.zero);
+                return;
+            }
         }
         public void OnExit()
         {

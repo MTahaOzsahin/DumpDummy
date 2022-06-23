@@ -29,7 +29,7 @@ namespace SurviveBoy.Concretes.Controllers
             IAnimations animations = new PlayerAnimation(GetComponent<Animator>());
 
             Idle idle = new Idle(animations);
-            Walk walk = new Walk(mover, animations, patrols);
+            Walk walk = new Walk(this,mover, animations, patrols);
             Chase chase = new Chase(this, _playerController, animations, mover);
 
             _statesMachine.AddTransition(idle, walk, () => !idle.IsIdle);
