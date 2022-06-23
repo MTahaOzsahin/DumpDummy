@@ -35,7 +35,7 @@ namespace SurviveBoy.Concretes.Controllers
             _statesMachine.AddTransition(idle, walk, () => !idle.IsIdle);
             _statesMachine.AddTransition(idle, chase,() => IsPlayerNear());
             _statesMachine.AddTransition(walk, chase, () => IsPlayerNear());
-            _statesMachine.AddTransition(walk, idle, () => idle.IsIdle);
+            _statesMachine.AddTransition(walk, idle, () => !walk.IsWalking);
             _statesMachine.AddTransition(chase, idle, () => !IsPlayerNear());
 
             _statesMachine.SetState(idle);

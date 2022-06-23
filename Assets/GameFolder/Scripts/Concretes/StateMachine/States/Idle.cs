@@ -19,7 +19,7 @@ namespace SurviveBoy.Concretes.StateMachine.States
         public void OnEnter()
         {
             IsIdle = true;
-            maxStandTime = Random.Range(4f, 10f);
+            maxStandTime = Random.Range(1f, 4f);
             _animations.MoveAnimation(0f);
         }
         public void Action()
@@ -29,7 +29,6 @@ namespace SurviveBoy.Concretes.StateMachine.States
             {
                 IsIdle = false;
             }
-            Debug.Log("idle");
         }
         public void OnExit()
         {

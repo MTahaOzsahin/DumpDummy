@@ -27,10 +27,11 @@ namespace SurviveBoy.Concretes.StateMachine.States
         public void Action()
         {
             Vector3 direction = (_playerController.position - _entityController.transform.position).normalized;
-            Vector3 absDirection = new Vector3(Mathf.Abs(direction.x), 0f, Mathf.Abs(direction.z));
-            _mover.Movement(absDirection * 0.8f);
+            //Vector3 absDirection = new Vector3(Mathf.Abs(direction.x), 0f, Mathf.Abs(direction.z));
+            _mover.Movement(direction * 0.6f);
             var targetRotation = Quaternion.LookRotation(direction);
-            _entityController.transform.rotation = Quaternion.Lerp(_entityController.transform.rotation, targetRotation, 0.3f);
+            //_entityController.transform.rotation = Quaternion.Lerp(_entityController.transform.rotation, targetRotation, 0.3f);
+            _entityController.transform.GetChild(0).transform.rotation = Quaternion.Lerp(_entityController.transform.GetChild(0).transform.rotation, targetRotation, 0.05f);
         }
         public void OnExit()
         {

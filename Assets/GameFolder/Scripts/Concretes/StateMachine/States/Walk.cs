@@ -13,6 +13,7 @@ namespace SurviveBoy.Concretes.StateMachine.States
         Transform[] _patrols;
         Transform _currentPatrol;
         int _patrolIndex = 0;
+
         public Walk(IEntityController entityController,IMover mover,IAnimations animations,params Transform[] patrols)
         {
             _entityController = entityController;
@@ -31,13 +32,15 @@ namespace SurviveBoy.Concretes.StateMachine.States
         public void Action()
         {
             if (_currentPatrol == null) return;
-            _mover.Movement(new Vector3(0f, 0f, 0.3f));
-            if (Vector2.Distance(_entityController.transform.position, _currentPatrol.position) <= 0.2f)
+            if (Vector3.Distance(_entityController.transform.position, _currentPatrol.position) <= 0.2f)
             {
                 IsWalking = false;
-                _mover.Movement(Vector3.zero);
                 return;
             }
+            Vector3 _direction = (_currentPatrol.position - _entityController.transform.position).normalized;
+            _mover.Movement(_direction * 0.7f);
+            var targetRotation = Quaternion.LookRotation(_direction);
+            _entityController.transform.GetChild(0).transform.rotation = Quaternion.Lerp(_entityController.transform.GetChild(0).transform.rotation, targetRotation, 0.05f);
         }
         public void OnExit()
         {
