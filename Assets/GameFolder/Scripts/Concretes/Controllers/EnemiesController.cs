@@ -18,6 +18,9 @@ namespace SurviveBoy.Concretes.Controllers
         [SerializeField] Transform[] patrols;
         [Header("Chase")]
         [SerializeField] float chaseDistance = 10f;
+        [Header("Run")]
+        [SerializeField] bool isRunning;
+
         private void Awake()
         {
             _statesMachine = new StatesMachine();
@@ -31,14 +34,24 @@ namespace SurviveBoy.Concretes.Controllers
             Idle idle = new Idle(animations);
             Walk walk = new Walk(this,mover, animations, patrols);
             Chase chase = new Chase(this, _playerController, animations, mover);
+            Run run = new Run(this, mover, animations, patrols);
+            Empty empty = new Empty();
 
             _statesMachine.AddTransition(idle, walk, () => !idle.IsIdle);
             _statesMachine.AddTransition(idle, chase,() => IsPlayerNear());
             _statesMachine.AddTransition(walk, chase, () => IsPlayerNear());
             _statesMachine.AddTransition(walk, idle, () => !walk.IsWalking);
             _statesMachine.AddTransition(chase, idle, () => !IsPlayerNear());
+            _statesMachine.AddTransition(run, empty, () => !run.isRunning);
+            _statesMachine.AddTransition(empty, run, () => true);
+
+            _statesMachine.AddAnyState(run, () => isRunning);
 
             _statesMachine.SetState(idle);
+
+            yield return new WaitForSeconds(2f);
+            isRunning = false;
+
 
             yield return null;
         }

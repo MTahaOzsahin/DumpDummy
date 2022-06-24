@@ -19,5 +19,9 @@ namespace SurviveBoy.Concretes.Movement
         {
             _playerController.transform.Translate(_moveSpeed * Time.deltaTime * direction);
         }
+        public void MovementForPlayer(Vector3 direction)
+        {
+            _playerController.transform.GetComponent<Rigidbody>().AddForce(direction * 15f);
+        }
     }
 }

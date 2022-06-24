@@ -16,6 +16,9 @@ namespace SurviveBoy.Concretes.Controllers
         IMover mover;
         IAnimations animations;
 
+        bool isPlayerDead = false;
+        public bool IsPlayerDead => isPlayerDead;
+
         private void Awake()
         {
             playerInputMap = new PlayerInputMap();
@@ -33,17 +36,36 @@ namespace SurviveBoy.Concretes.Controllers
         private void Update()
         {
             playerGetInputs = GetComponent<PlayerGetInputs>();
+            if (isPlayerDead)
+            {
+                this.gameObject.SetActive(false);
+            }
+            DeadCheck();
             Animations();
             Movement();
         }
         void Movement()
         {
-            mover.Movement(playerGetInputs.GetDirection());
+            mover.MovementForPlayer(playerGetInputs.GetDirection());
         }
         void Animations()
         {
             animations.RotateAnim(playerGetInputs.GetRotation(), playerGetInputs.GetComRotation());
             animations.MoveAnimation(Mathf.Abs(playerGetInputs.GetDirection().magnitude));
+        }
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (collision.collider.GetComponent<EnemiesController>())
+            {
+                isPlayerDead = true;
+            }
+        }
+        void DeadCheck()
+        {
+            if (transform.position.y < -10f)
+            {
+                isPlayerDead = true;
+            }
         }
     }
 }

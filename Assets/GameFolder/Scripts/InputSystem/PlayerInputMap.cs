@@ -37,6 +37,15 @@ namespace SurviveBoy.InputSystem
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Look"",
+                    ""type"": ""Value"",
+                    ""id"": ""5e9e5ee8-6ae1-4631-8b14-f7e38d5c8b50"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -204,6 +213,17 @@ namespace SurviveBoy.InputSystem
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""244de1e6-4b03-4c01-afcc-31f235ce7037"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mobile"",
+                    ""action"": ""Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -236,6 +256,7 @@ namespace SurviveBoy.InputSystem
             // General
             m_General = asset.FindActionMap("General", throwIfNotFound: true);
             m_General_Movement = m_General.FindAction("Movement", throwIfNotFound: true);
+            m_General_Look = m_General.FindAction("Look", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -296,11 +317,13 @@ namespace SurviveBoy.InputSystem
         private readonly InputActionMap m_General;
         private IGeneralActions m_GeneralActionsCallbackInterface;
         private readonly InputAction m_General_Movement;
+        private readonly InputAction m_General_Look;
         public struct GeneralActions
         {
             private @PlayerInputMap m_Wrapper;
             public GeneralActions(@PlayerInputMap wrapper) { m_Wrapper = wrapper; }
             public InputAction @Movement => m_Wrapper.m_General_Movement;
+            public InputAction @Look => m_Wrapper.m_General_Look;
             public InputActionMap Get() { return m_Wrapper.m_General; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -313,6 +336,9 @@ namespace SurviveBoy.InputSystem
                     @Movement.started -= m_Wrapper.m_GeneralActionsCallbackInterface.OnMovement;
                     @Movement.performed -= m_Wrapper.m_GeneralActionsCallbackInterface.OnMovement;
                     @Movement.canceled -= m_Wrapper.m_GeneralActionsCallbackInterface.OnMovement;
+                    @Look.started -= m_Wrapper.m_GeneralActionsCallbackInterface.OnLook;
+                    @Look.performed -= m_Wrapper.m_GeneralActionsCallbackInterface.OnLook;
+                    @Look.canceled -= m_Wrapper.m_GeneralActionsCallbackInterface.OnLook;
                 }
                 m_Wrapper.m_GeneralActionsCallbackInterface = instance;
                 if (instance != null)
@@ -320,6 +346,9 @@ namespace SurviveBoy.InputSystem
                     @Movement.started += instance.OnMovement;
                     @Movement.performed += instance.OnMovement;
                     @Movement.canceled += instance.OnMovement;
+                    @Look.started += instance.OnLook;
+                    @Look.performed += instance.OnLook;
+                    @Look.canceled += instance.OnLook;
                 }
             }
         }
@@ -345,6 +374,7 @@ namespace SurviveBoy.InputSystem
         public interface IGeneralActions
         {
             void OnMovement(InputAction.CallbackContext context);
+            void OnLook(InputAction.CallbackContext context);
         }
     }
 }

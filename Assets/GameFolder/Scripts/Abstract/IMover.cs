@@ -6,6 +6,7 @@ namespace SurviveBoy.Abstract
 {
     public interface IMover 
     {
-        public void Movement(Vector3 direction);
+        void Movement(Vector3 direction);
+        void MovementForPlayer(Vector3 direction);
     }
 }
