@@ -12070,30 +12070,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2808645213783644304, guid: 5b6ccfeab7d445048b9c350f87f92a6d, type: 3}
-      propertyPath: m_Drag
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 2808645213783644304, guid: 5b6ccfeab7d445048b9c350f87f92a6d, type: 3}
-      propertyPath: m_Constraints
-      value: 116
-      objectReference: {fileID: 0}
-    - target: {fileID: 2808645213783644307, guid: 5b6ccfeab7d445048b9c350f87f92a6d, type: 3}
-      propertyPath: m_Size.x
-      value: 0.7951321
-      objectReference: {fileID: 0}
-    - target: {fileID: 2808645213783644307, guid: 5b6ccfeab7d445048b9c350f87f92a6d, type: 3}
-      propertyPath: m_Size.z
-      value: 0.52948105
-      objectReference: {fileID: 0}
-    - target: {fileID: 2808645213783644307, guid: 5b6ccfeab7d445048b9c350f87f92a6d, type: 3}
-      propertyPath: m_Center.x
-      value: -0.026471049
-      objectReference: {fileID: 0}
-    - target: {fileID: 2808645213783644307, guid: 5b6ccfeab7d445048b9c350f87f92a6d, type: 3}
-      propertyPath: m_Center.z
-      value: -0.0006349683
-      objectReference: {fileID: 0}
     - target: {fileID: 2808645213783644309, guid: 5b6ccfeab7d445048b9c350f87f92a6d, type: 3}
       propertyPath: m_Name
       value: Player
@@ -44317,18 +44293,6 @@ PrefabInstance:
     - target: {fileID: 7441528419794314332, guid: 139baa90fa940994fa5ef9cdfd030028, type: 3}
       propertyPath: m_Name
       value: Main Camera
-      objectReference: {fileID: 0}
-    - target: {fileID: 7441528419794314334, guid: 139baa90fa940994fa5ef9cdfd030028, type: 3}
-      propertyPath: field of view
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 7441528419794314334, guid: 139baa90fa940994fa5ef9cdfd030028, type: 3}
-      propertyPath: far clip plane
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 7441528419794314334, guid: 139baa90fa940994fa5ef9cdfd030028, type: 3}
-      propertyPath: near clip plane
-      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 139baa90fa940994fa5ef9cdfd030028, type: 3}
