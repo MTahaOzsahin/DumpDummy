@@ -15,15 +15,19 @@ namespace SurviveBoy.Concretes.Controllers
         PlayerGetInputs playerGetInputs;
         IMover mover;
         IAnimations animations;
+        IGroundChecker groundChecker;
+
 
         bool isPlayerDead = false;
-        public bool IsPlayerDead => isPlayerDead;
 
+        public event System.Action OnPlayerDead;
         private void Awake()
         {
             playerInputMap = new PlayerInputMap();
             mover = new Mover(this);
             animations = new PlayerAnimation(GetComponent<Animator>());
+            groundChecker = GetComponent<IGroundChecker>();
+
         }
         private void OnEnable()
         {
@@ -35,14 +39,18 @@ namespace SurviveBoy.Concretes.Controllers
         }
         private void Update()
         {
-            playerGetInputs = GetComponent<PlayerGetInputs>();
-            if (isPlayerDead)
-            {
-                this.gameObject.SetActive(false);
-            }
-            DeadCheck();
+            GetInputs();
+            OnDead();
             Animations();
             Movement();
+        }
+        private void FixedUpdate()
+        {
+            GroundChecker();
+        }
+        void GetInputs()
+        {
+            playerGetInputs = GetComponent<PlayerGetInputs>();
         }
         void Movement()
         {
@@ -53,6 +61,13 @@ namespace SurviveBoy.Concretes.Controllers
             animations.RotateAnim(playerGetInputs.GetRotation(), playerGetInputs.GetComRotation());
             animations.MoveAnimation(Mathf.Abs(playerGetInputs.GetDirection().magnitude));
         }
+        void GroundChecker()
+        {
+            if (!groundChecker.IsGrounded)
+            {
+                GetComponent<Rigidbody>().AddForce(new Vector3(0f, -100f, 0f));
+            }
+        }
         private void OnCollisionEnter(Collision collision)
         {
             if (collision.collider.GetComponent<EnemiesController>())
@@ -60,11 +75,17 @@ namespace SurviveBoy.Concretes.Controllers
                 isPlayerDead = true;
             }
         }
-        void DeadCheck()
+        void OnDead()
         {
-            if (transform.position.y < -10f)
+            if (transform.position.y < -30f)
             {
                 isPlayerDead = true;
+            }
+            if (isPlayerDead)
+            {
+                GetComponent<Rigidbody>().velocity = Vector3.zero;
+                OnPlayerDead?.Invoke();
+                isPlayerDead = false;
             }
         }
     }

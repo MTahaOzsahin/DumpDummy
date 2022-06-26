@@ -1,3 +1,4 @@
+using SurviveBoy.Abstract;
 using SurviveBoy.InputSystem;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,7 +6,7 @@ using UnityEngine;
 
 namespace SurviveBoy.Concretes.Controllers
 {
-    public class PlayerGetInputs : MonoBehaviour
+    public class PlayerGetInputs : MonoBehaviour,IPlayerGetInputs
     {
         PlayerInputMap playerInputMap;
         Vector2 currentInputVector;
