@@ -9,7 +9,7 @@ namespace SurviveBoy.Concretes.Movement
     {
         [SerializeField] Transform[] groundCheckerTransforms;
         [SerializeField] LayerMask groundLayer;
-        [SerializeField] float maxDistance = 0.3f;
+        [SerializeField] float maxDistance = 0.1f;
         bool isGrounded = false;
         public bool IsGrounded => isGrounded;
 
@@ -22,7 +22,7 @@ namespace SurviveBoy.Concretes.Movement
             }
         }
 
-        void CheckIfGrounded(Transform groundCheckerTransform)
+        public void CheckIfGrounded(Transform groundCheckerTransform)
         {
             if (Physics.Raycast(groundCheckerTransform.position, groundCheckerTransform.forward, out RaycastHit hit, maxDistance, groundLayer))
             {
@@ -34,5 +34,7 @@ namespace SurviveBoy.Concretes.Movement
             }
             Debug.DrawRay(groundCheckerTransform.position, groundCheckerTransform.forward * maxDistance, Color.green);
         }
+
+        
     }
 }

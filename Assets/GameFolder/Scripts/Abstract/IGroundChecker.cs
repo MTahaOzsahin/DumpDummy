@@ -7,6 +7,8 @@ namespace SurviveBoy.Abstract
     public interface IGroundChecker
     {
         bool IsGrounded { get; }
+        void CheckIfGrounded(Transform groundCheckerTransform);
+
     }
 
 }

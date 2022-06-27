@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace SurviveBoy.Concretes.Managers
 {
@@ -10,6 +11,8 @@ namespace SurviveBoy.Concretes.Managers
     {
         CheckPointController[] checkPointControllers;
         PlayerController playerController;
+
+        [SerializeField] bool level3 = false;
 
         private void Awake()
         {
@@ -26,7 +29,15 @@ namespace SurviveBoy.Concretes.Managers
         }
         void CheckPointOnDead()
         {
-            playerController.transform.position = checkPointControllers.LastOrDefault(x => x.IsPassed).transform.position;
+            if (level3) //Level 3 will realod all scene. This part will be moved game manager later.
+            {
+                SceneManager.LoadScene(0);
+            }
+            else
+            {
+                playerController.transform.position = checkPointControllers.LastOrDefault(x => x.IsPassed).transform.position;
+            }
+            
         }
     }
 }

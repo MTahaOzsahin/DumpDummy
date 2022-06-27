@@ -1,3 +1,4 @@
+using SurviveBoy.Concretes.Managers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,13 +9,16 @@ namespace SurviveBoy.Concretes.Controllers
     {
         [Header("Will this object move")]
         [SerializeField] bool isMove;
-        [Header("Values")]
+        [Header("If will move, variables")]
         [SerializeField] Vector3 moveDirection;
         [SerializeField] float moveSpeed;
         [SerializeField] float moveRate;
-
         float moveTimer = 0f;
 
+        private void Start()
+        {
+           
+        }
         private void FixedUpdate()
         {
             Movement();
