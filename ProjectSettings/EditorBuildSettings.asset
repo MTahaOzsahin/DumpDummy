@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level 3 Runner.unity
     guid: 034f6e48c56b73741b90049f100aa514
+  - enabled: 1
+    path: Assets/Scenes/Level 5 Escape.unity
+    guid: ccb0ca72eabc68b4cbd94aae0855df32
   m_configObjects: {}

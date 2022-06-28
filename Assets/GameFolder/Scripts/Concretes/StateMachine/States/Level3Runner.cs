@@ -27,7 +27,7 @@ namespace SurviveBoy.Concretes.StateMachine.States
         public void Action()
         {
             Vector3 direction = (_playerController.position - _entityController.transform.position).normalized;
-            _mover.Movement(direction *2.5f);
+            _mover.Movement(direction *1f);
             var targetRotation = Quaternion.LookRotation(direction);
             _entityController.transform.GetChild(0).transform.rotation = Quaternion.Lerp(_entityController.transform.GetChild(0).transform.rotation, targetRotation, 0.05f);
         }

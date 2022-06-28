@@ -13,6 +13,7 @@ namespace SurviveBoy.Concretes.Managers
         PlayerController playerController;
 
         [SerializeField] bool level3 = false;
+        [SerializeField] bool level5 = false;
 
         private void Awake()
         {
@@ -32,6 +33,10 @@ namespace SurviveBoy.Concretes.Managers
             if (level3) //Level 3 will realod all scene. This part will be moved game manager later.
             {
                 SceneManager.LoadScene(0);
+            }
+            else if (level5)
+            {
+                SceneManager.LoadScene(1);
             }
             else
             {

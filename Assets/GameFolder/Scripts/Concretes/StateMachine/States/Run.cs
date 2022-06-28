@@ -36,7 +36,7 @@ namespace SurviveBoy.Concretes.StateMachine.States
                 return;
             }
             Vector3 _direction = (_currentPatrol.position - _entityController.transform.position).normalized;
-            _mover.Movement(_direction * 1.2f); ;
+            _mover.Movement(_direction * 1.5f); ;
             var targetRotation = Quaternion.LookRotation(_direction);
             _entityController.transform.GetChild(0).transform.rotation = Quaternion.Lerp(_entityController.transform.GetChild(0).transform.rotation, targetRotation, 0.05f);
         }
