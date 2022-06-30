@@ -27,6 +27,7 @@ namespace SurviveBoy.Concretes.Managers
 
         public void LevelAsyncLoader(int index)
         {
+            Time.timeScale = 1;
             SceneManager.LoadSceneAsync(index,LoadSceneMode.Single);
         }
         public void NextLevelLoader()
@@ -39,6 +40,7 @@ namespace SurviveBoy.Concretes.Managers
         }
         public void WelcomeLevelLoader()
         {
+            Time.timeScale = 1;
             SceneManager.LoadSceneAsync(0);
         }
         public void QuitGame()

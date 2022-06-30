@@ -1499,6 +1499,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 217793890505444143, guid: e5945ff609e9f6d40860618d46888abb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 217793890505444143, guid: e5945ff609e9f6d40860618d46888abb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 330706753}
+    - target: {fileID: 217793890505444143, guid: e5945ff609e9f6d40860618d46888abb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 217793890505444143, guid: e5945ff609e9f6d40860618d46888abb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PauseGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 217793890505444143, guid: e5945ff609e9f6d40860618d46888abb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 217793890505444143, guid: e5945ff609e9f6d40860618d46888abb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SurviveBoy.Concretes.Managers.TimeScaleManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 217793890505444143, guid: e5945ff609e9f6d40860618d46888abb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1363430250078334008, guid: e5945ff609e9f6d40860618d46888abb, type: 3}
       propertyPath: m_text
       value: get the green guy
@@ -1681,6 +1709,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5945ff609e9f6d40860618d46888abb, type: 3}
+--- !u!114 &330706753 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2183632775043878877, guid: e5945ff609e9f6d40860618d46888abb, type: 3}
+  m_PrefabInstance: {fileID: 330706752}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f62bf29e254dac4191dbd1c3437e555, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &350157968
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1816,11 +1855,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7441528419794314329, guid: 139baa90fa940994fa5ef9cdfd030028, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000017438081
+      value: -0.00000001743808
       objectReference: {fileID: 0}
     - target: {fileID: 7441528419794314329, guid: 139baa90fa940994fa5ef9cdfd030028, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000025769857
+      value: 0.0000000025769789
       objectReference: {fileID: 0}
     - target: {fileID: 7441528419794314329, guid: 139baa90fa940994fa5ef9cdfd030028, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3480,11 +3519,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 356731522140292828, guid: 27316223e273eee4897775545b1b8805, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000016977733
+      value: -0.000000016977733
       objectReference: {fileID: 0}
     - target: {fileID: 356731522140292828, guid: 27316223e273eee4897775545b1b8805, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000027957352
+      value: 0.0000000027957352
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27316223e273eee4897775545b1b8805, type: 3}

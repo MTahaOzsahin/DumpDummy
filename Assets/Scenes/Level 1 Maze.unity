@@ -6287,6 +6287,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 217793890505444143, guid: e5945ff609e9f6d40860618d46888abb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 217793890505444143, guid: e5945ff609e9f6d40860618d46888abb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 262806751}
+    - target: {fileID: 217793890505444143, guid: e5945ff609e9f6d40860618d46888abb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 217793890505444143, guid: e5945ff609e9f6d40860618d46888abb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PauseGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 217793890505444143, guid: e5945ff609e9f6d40860618d46888abb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 217793890505444143, guid: e5945ff609e9f6d40860618d46888abb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SurviveBoy.Concretes.Managers.TimeScaleManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 217793890505444143, guid: e5945ff609e9f6d40860618d46888abb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1363430249561138431, guid: e5945ff609e9f6d40860618d46888abb, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -6470,6 +6498,17 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 2949854753682700850, guid: e5945ff609e9f6d40860618d46888abb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e5945ff609e9f6d40860618d46888abb, type: 3}
+--- !u!114 &262806751 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2183632775043878877, guid: e5945ff609e9f6d40860618d46888abb, type: 3}
+  m_PrefabInstance: {fileID: 262806750}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f62bf29e254dac4191dbd1c3437e555, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &266795288
 PrefabInstance:
   m_ObjectHideFlags: 0
