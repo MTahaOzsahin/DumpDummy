@@ -6,8 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/WelcomeScene.unity
+    guid: aa4ec11a2cbee6847866c2c7d271bbf2
+  - enabled: 1
+    path: Assets/Scenes/Level 1 Maze.unity
+    guid: caecc423bb1319d4589e400e7c328f6a
+  - enabled: 1
+    path: Assets/Scenes/Level 2 Obstacle.unity
+    guid: b4a245c3fa0676f44a64199f979f1ff7
+  - enabled: 1
     path: Assets/Scenes/Level 3 Runner.unity
     guid: 034f6e48c56b73741b90049f100aa514
+  - enabled: 1
+    path: Assets/Scenes/Level 4 Catch.unity
+    guid: c4d6c908cba2f51448cd36f1b90e250e
   - enabled: 1
     path: Assets/Scenes/Level 5 Escape.unity
     guid: ccb0ca72eabc68b4cbd94aae0855df32

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Level
   - Cubes
+  - Level4Runner
   layers:
   - Default
   - TransparentFX

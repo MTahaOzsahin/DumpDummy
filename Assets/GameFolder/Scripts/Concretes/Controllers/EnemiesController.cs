@@ -37,7 +37,7 @@ namespace SurviveBoy.Concretes.Controllers
             Walk walk = new Walk(this,mover, animations, patrols);
             Chase chase = new Chase(this, _playerController, animations, mover);
             Run run = new Run(this, mover, animations, patrols);
-            Level3Runner level3Runner = new Level3Runner(this, mover, animations, _playerController);
+            Runner Runner = new Runner(this, mover, animations, _playerController);
             Empty empty = new Empty();
 
             _statesMachine.AddTransition(idle, walk, () => !idle.IsIdle);
@@ -47,11 +47,11 @@ namespace SurviveBoy.Concretes.Controllers
             _statesMachine.AddTransition(chase, idle, () => !IsPlayerNear());
             _statesMachine.AddTransition(run, empty, () => !run.isRunning);
             _statesMachine.AddTransition(empty, run, () => true);
-            _statesMachine.AddTransition(level3Runner, empty, () => !level3Runner.isLevel3);
-            _statesMachine.AddTransition(empty, level3Runner, () => true);
+            _statesMachine.AddTransition(Runner, empty, () => !Runner.isLevel3);
+            _statesMachine.AddTransition(empty, Runner, () => true);
 
             _statesMachine.AddAnyState(run, () => isRunning);
-            _statesMachine.AddAnyState(level3Runner, () => isLevel3);
+            _statesMachine.AddAnyState(Runner, () => isLevel3);
 
             _statesMachine.SetState(idle);
 

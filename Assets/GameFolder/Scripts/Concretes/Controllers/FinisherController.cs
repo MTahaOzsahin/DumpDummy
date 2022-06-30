@@ -1,6 +1,8 @@
+using SurviveBoy.Concretes.Managers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace SurviveBoy.Concretes.Controllers
 {
@@ -10,7 +12,9 @@ namespace SurviveBoy.Concretes.Controllers
         {
             if (collider.GetComponent<PlayerController>() != null)
             {
-                Debug.Log("Next Level");
+                int buildIndex = SceneManager.GetActiveScene().buildIndex;
+                SceneManager.LoadSceneAsync(buildIndex + 1);
+                //GameManager.Instance.NextLevelLoader();
             }
         }
     }

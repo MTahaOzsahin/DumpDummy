@@ -5,13 +5,13 @@ using UnityEngine;
 
 namespace SurviveBoy.Concretes.StateMachine.States
 {
-    public class Level3Runner : IStateMachine    //Only use of level 3 runner.
+    public class Runner : IStateMachine    //Only use of level 3 runner.
     {
         IMover _mover;
         IAnimations _animations;
         Transform _playerController;
         IEntityController _entityController;
-        public Level3Runner(IEntityController entityController, IMover mover, IAnimations animations, Transform playerController)
+        public Runner(IEntityController entityController, IMover mover, IAnimations animations, Transform playerController)
         {
             _entityController = entityController;
             _playerController = playerController;

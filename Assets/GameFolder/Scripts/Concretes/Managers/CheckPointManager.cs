@@ -12,8 +12,6 @@ namespace SurviveBoy.Concretes.Managers
         CheckPointController[] checkPointControllers;
         PlayerController playerController;
 
-        [SerializeField] bool level3 = false;
-        [SerializeField] bool level5 = false;
 
         private void Awake()
         {
@@ -30,13 +28,13 @@ namespace SurviveBoy.Concretes.Managers
         }
         void CheckPointOnDead()
         {
-            if (level3) //Level 3 will realod all scene. This part will be moved game manager later.
+            if (SceneManager.GetActiveScene().buildIndex == 3) 
             {
-                SceneManager.LoadScene(0);
+                SceneManager.LoadScene(3);
             }
-            else if (level5)
+            else if (SceneManager.GetActiveScene().buildIndex == 5)
             {
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(5);
             }
             else
             {

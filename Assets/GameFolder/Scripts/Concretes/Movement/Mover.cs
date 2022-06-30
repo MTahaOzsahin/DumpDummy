@@ -35,7 +35,7 @@ namespace SurviveBoy.Concretes.Movement
                 playerRigibody.velocity = new Vector3(0f, playerRigibody.velocity.y, 0f);
             }
 
-            playerRigibody.velocity = new Vector3(direction.x * 8f,0f,direction.z * 8f);  
+            playerRigibody.velocity = new Vector3(direction.x * 8f, playerRigibody.velocity.y, direction.z * 8f);  
         }
     }
 }

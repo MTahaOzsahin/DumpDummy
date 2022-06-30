@@ -6,6 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 namespace SurviveBoy.Concretes.Controllers
 {
@@ -72,6 +73,7 @@ namespace SurviveBoy.Concretes.Controllers
         {
             if (collision.collider.GetComponent<EnemiesController>())
             {
+                if (collision.collider.CompareTag("Level4Runner")) return;
                 isPlayerDead = true;
             }
         }
