@@ -59,7 +59,7 @@ namespace SurviveBoy.Concretes.Controllers
         }
         void Animations()
         {
-            animations.RotateAnim(playerGetInputs.GetRotation(), playerGetInputs.GetComRotation());
+            //animations.RotateAnim(playerGetInputs.GetRotation(), playerGetInputs.GetComRotation());  Diseabled 
             animations.MoveAnimation(Mathf.Abs(playerGetInputs.GetDirection().magnitude));
         }
         void GroundChecker()

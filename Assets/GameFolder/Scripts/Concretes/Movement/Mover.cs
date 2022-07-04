@@ -28,6 +28,11 @@ namespace SurviveBoy.Concretes.Movement
 
             //_playerController.transform.rotation = CharacterRotation;
 
+           
+            var targetRotation = Quaternion.LookRotation(direction);
+            _playerController.transform.GetChild(0).transform.rotation = Quaternion.Lerp(_playerController.transform.GetChild(0).transform.rotation, targetRotation, 0.05f);
+
+
 
             playerRigibody = _playerController.transform.GetComponent<Rigidbody>();
             if (direction == Vector3.zero)
@@ -35,7 +40,7 @@ namespace SurviveBoy.Concretes.Movement
                 playerRigibody.velocity = new Vector3(0f, playerRigibody.velocity.y, 0f);
             }
 
-            playerRigibody.velocity = new Vector3(direction.x * 8f, playerRigibody.velocity.y, direction.z * 8f);  
+            playerRigibody.velocity = new Vector3(direction.x * 8f, playerRigibody.velocity.y, direction.z * 8f);
         }
     }
 }

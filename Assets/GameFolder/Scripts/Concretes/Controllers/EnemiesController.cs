@@ -12,7 +12,7 @@ namespace SurviveBoy.Concretes.Controllers
     public class EnemiesController : MonoBehaviour, IEntityController
     {
         StatesMachine _statesMachine;
-        Transform _playerController;
+        Transform _enemiesController;
 
         [Header("Movements")]
         [SerializeField] Transform[] patrols;
@@ -26,7 +26,7 @@ namespace SurviveBoy.Concretes.Controllers
         private void Awake()
         {
             _statesMachine = new StatesMachine();
-            _playerController = FindObjectOfType<PlayerController>().transform;
+            _enemiesController = FindObjectOfType<PlayerController>().transform;
         }
         IEnumerator Start()
         {
@@ -35,9 +35,9 @@ namespace SurviveBoy.Concretes.Controllers
 
             Idle idle = new Idle(animations);
             Walk walk = new Walk(this,mover, animations, patrols);
-            Chase chase = new Chase(this, _playerController, animations, mover);
+            Chase chase = new Chase(this, _enemiesController, animations, mover);
             Run run = new Run(this, mover, animations, patrols);
-            Runner Runner = new Runner(this, mover, animations, _playerController);
+            Runner Runner = new Runner(this, mover, animations, _enemiesController);
             Empty empty = new Empty();
 
             _statesMachine.AddTransition(idle, walk, () => !idle.IsIdle);
@@ -68,7 +68,7 @@ namespace SurviveBoy.Concretes.Controllers
         }
         bool IsPlayerNear()
         {
-            float distance = Mathf.Abs(Vector3.Distance(transform.position, _playerController.position));
+            float distance = Mathf.Abs(Vector3.Distance(transform.position, _enemiesController.position));
             if (distance > chaseDistance)
             {
                 return false;

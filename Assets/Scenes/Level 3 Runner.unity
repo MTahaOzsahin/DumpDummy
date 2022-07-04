@@ -1251,6 +1251,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LevelAsyncLoader
       objectReference: {fileID: 0}
+    - target: {fileID: 2949854751615426761, guid: e5945ff609e9f6d40860618d46888abb, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2949854751615426767, guid: e5945ff609e9f6d40860618d46888abb, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 579.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2949854751615426767, guid: e5945ff609e9f6d40860618d46888abb, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 976.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2949854751615426767, guid: e5945ff609e9f6d40860618d46888abb, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -37
+      objectReference: {fileID: 0}
+    - target: {fileID: 2949854751615426767, guid: e5945ff609e9f6d40860618d46888abb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -4.299988
+      objectReference: {fileID: 0}
     - target: {fileID: 2949854752803071558, guid: e5945ff609e9f6d40860618d46888abb, type: 3}
       propertyPath: m_Pivot.x
       value: 0
