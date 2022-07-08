@@ -1,4 +1,4 @@
-Project5 Dungeon Escape
+#Dump Dummy
 
 
 This is a Unity prototype created to improve myself. A robot named Dummy try to escape. Dummy is Dump btw.
@@ -10,7 +10,8 @@ Fully mobile support.
 
 Apk build : https://drive.google.com/file/d/1UyWQnjauggQUUCx8DTnqPd8z_dfehKI2/view?usp=sharing
 
-What is focused in project:
+#What is focused in project:
+
 *Unity New Input System.
 ![Input System](https://user-images.githubusercontent.com/87945619/177920887-e9f92011-8938-426e-9617-13ca97419789.png)
 
